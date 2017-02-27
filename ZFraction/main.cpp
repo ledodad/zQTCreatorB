@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <ZFraction.h>
 using namespace std;
@@ -25,3 +26,6 @@ int main()
 
     return 0;
 }
+=======
+
+>>>>>>> 7c4d5093e7484b9890ea45308b10cf111e84fc65
