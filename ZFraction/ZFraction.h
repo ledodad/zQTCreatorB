@@ -1,20 +1,20 @@
 #ifndef ZFRACTION_H
 #define ZFRACTION_H
 
-ZFraction a(4,5);      //Déclare une fraction valant 4/5
-ZFraction b(2);        //Déclare une fraction valant 2/1 (ce qui vaut 2)
-ZFraction c,d;         //Déclare deux fractions valant 0
-
-
 
 class ZFraction
 {
 public:
-    ZFration
+    ZFraction(int numerateur=0, int denominateur=0);
+    double dividiendo(int &num,int &den);
+    //operator<<
+    void afficher() const;
 
 
 
 private:
+    int m_numerateur;
+    int m_denominateur;
 
 
 };
