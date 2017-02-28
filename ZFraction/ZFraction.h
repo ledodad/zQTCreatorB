@@ -5,8 +5,10 @@
 class ZFraction
 {
 public:
-    ZFraction(int numerateur=0, int denominateur=0);
-    double dividiendo(int &num,int &den);
+    ZFraction();
+    ZFraction(int numerateur);
+    ZFraction(int numerateur, int denominateur);
+    //double dividiendo(int &num,int &den);
     //operator<<
     void afficher() const;
 
