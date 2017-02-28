@@ -8,6 +8,8 @@ public:
     ZFraction();
     ZFraction(int numerateur);
     ZFraction(int numerateur, int denominateur);
+    //friend Cents operator+(const Cents &c1, const Cents &c2);
+    friend ZFraction operator+(const ZFraction &num, const ZFraction  &den);
     //double dividiendo(int &num,int &den);
     //operator<<
     void afficher() const;
