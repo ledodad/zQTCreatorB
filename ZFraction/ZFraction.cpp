@@ -17,24 +17,37 @@ ZFraction::ZFraction(int numerateur):m_numerateur(numerateur),m_denominateur(1)
 
 }
 
-ZFraction operator+(const ZFraction &num, const ZFraction &den)
+int ZFraction::suma(ZFraction const& fracSum) const
 {
-    return ZFraction(num.m_numerateur+den.m_denominateur);
+    return (fracSum.m_numerateur*fracSum.m_denominateur);
 }
 
-//Cents::Cents operator+(const Cents &c1, const Cents &c2)
-//{
-// return Cents(c1.m_cents + c2.m_cents);
-//}
+bool operator+(ZFraction const& a, ZFraction const& b)
+{
+    return a.suma(b);
+}
 
-
-//double ZFraction:: dividiendo(int &num,int &den)
-//{
-//    return m_numerateur/m_denominateur;
-//}
 
 
 void ZFraction::afficher() const
 {
     std::cout<<m_numerateur<<"/"<<m_denominateur<<std::endl;
 }
+
+
+//bool ZFraction::estEgal(Duree const& b) const;
+//{
+//    return (m_heures == b.m_heures && m_minutes == b.m_minutes && m_secondes == b.m_secondes);     //Teste si a.m_heure == b.m_heure etc.
+//}
+
+
+
+//void operator+(ZFraction fracSum)
+//{
+//    fracSum=getVal().m_numerateur*getVal().m_denominateur;
+//}
+
+//ZFraction operator+(const ZFraction &num, const ZFraction &den)
+//{
+//    return ZFraction(num.m_numerateur+den.m_denominateur);
+//}
