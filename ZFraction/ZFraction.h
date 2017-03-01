@@ -9,7 +9,7 @@ public:
     ZFraction(int numerateur);
     ZFraction(int numerateur, int denominateur);
 
-    //ZFraction& operator+=(ZFraction const& fracSum);
+    ZFraction& operator+=(ZFraction const& fracSum);
 
     //ZFraction suma(ZFraction const& result) ;
     //int suma(int const& fracSum) const;
@@ -22,8 +22,7 @@ private:
 };
 std::ostream& operator<<( std::ostream &flux, ZFraction const& fraction);
 
-
-//ZFraction operator+(ZFraction const& a, ZFraction const& b);
+ZFraction operator+(ZFraction const& a, ZFraction const& b);
 //bool operator+(ZFraction const& a, ZFraction const& b);
 
 

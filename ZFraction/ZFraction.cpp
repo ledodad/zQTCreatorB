@@ -20,12 +20,22 @@ ZFraction::ZFraction(int numerateur, int denominateur):m_numerateur(numerateur),
 
 
 
-//ZFraction& operator+=(ZFraction const& frac1)
-//{
-//      m_numerateur=frac1.m_numerateur*frac2.m_denominateur;
-//      m_denominateur=frac1.m_denominateur*frac2.m_denominateur;
-//      return *this;
-//}
+ZFraction operator+(ZFraction const& a, ZFraction const& b)
+{
+    ZFraction copie(a);
+    copie += b;
+    return copie;
+}
+
+
+ZFraction& ZFraction:: operator+=(ZFraction const& autre)
+{
+      m_numerateur=autre.m_numerateur*m_denominateur+autre.m_denominateur*m_numerateur;
+
+      m_denominateur=autre.m_denominateur*m_denominateur;
+
+      return *this;
+}
 
 
 //ZFraction ZFraction::suma(ZFraction const& fracSum2)
