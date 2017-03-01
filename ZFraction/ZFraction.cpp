@@ -45,6 +45,27 @@ ZFraction operator+(ZFraction const& a, ZFraction const& b)
     return copie;
 }
 
+ bool ZFraction::plusPetit(ZFraction const& b) const
+{
+     if (m_numerateur*b.m_denominateur < m_denominateur*b.m_numerateur)
+         return true;
+     else
+         return false;
+ }
+
+
+ bool operator<(ZFraction const& a,ZFraction const& b)
+ {
+   return a.plusPetit(b);
+ }
+
+
+bool operator==(ZFraction const& a,ZFraction const& b)
+{
+   return (a.m_numerateur==b.m_numerateur && a.m_denominateur==b.m_denominateur);
+}
+
+
 
 ostream& operator<<(ostream &flux, ZFraction const& fraction )
 {
