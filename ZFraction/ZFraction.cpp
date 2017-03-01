@@ -15,6 +15,22 @@ ZFraction::ZFraction(int numerateur, int denominateur):m_numerateur(numerateur),
 {
 }
 
+
+ZFraction& ZFraction::operator+=(ZFraction const& fractionB)
+{
+      m_numerateur=fractionB.m_numerateur*m_denominateur+fractionB.m_denominateur*m_numerateur;
+      m_denominateur=fractionB.m_denominateur*m_denominateur;
+      return *this;
+}
+
+ZFraction& ZFraction::operator*=(ZFraction const& fractionB)
+{
+      m_numerateur=fractionB.m_numerateur*m_numerateur;
+      m_denominateur=fractionB.m_denominateur*m_denominateur;
+      return *this;
+}
+
+
 ZFraction operator+(ZFraction const& a, ZFraction const& b)
 {
     ZFraction copie(a);
@@ -22,13 +38,11 @@ ZFraction operator+(ZFraction const& a, ZFraction const& b)
     return copie;
 }
 
-
-ZFraction& ZFraction:: operator+=(ZFraction const& autre)
+ ZFraction operator*(ZFraction const& a, ZFraction const& b)
 {
-      m_numerateur=autre.m_numerateur*m_denominateur+autre.m_denominateur*m_numerateur;
-      m_denominateur=autre.m_denominateur*m_denominateur;
-
-      return *this;
+    ZFraction copie(a);
+    copie *= b;
+    return copie;
 }
 
 

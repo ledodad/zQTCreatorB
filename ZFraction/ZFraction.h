@@ -8,7 +8,8 @@ public:
     ZFraction();
     ZFraction(int numerateur);
     ZFraction(int numerateur, int denominateur);
-    ZFraction& operator+=(ZFraction const& fracSum);
+    ZFraction& operator+=(ZFraction const& fractionB);
+    ZFraction& operator*=(ZFraction const& fracMultB);
 
     void afficher(std::ostream &flux) const;
 
@@ -18,6 +19,8 @@ private:
 };
 
 ZFraction operator+(ZFraction const& a, ZFraction const& b);
+ZFraction operator*(ZFraction const& a, ZFraction const& b);
+
 std::ostream& operator<<( std::ostream &flux, ZFraction const& fraction);
 
 #endif // ZFRACTION_H
