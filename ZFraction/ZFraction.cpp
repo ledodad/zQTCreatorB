@@ -47,10 +47,8 @@ ZFraction operator+(ZFraction const& a, ZFraction const& b)
 
  bool ZFraction::plusPetit(ZFraction const& b) const
 {
-     if (m_numerateur*b.m_denominateur < m_denominateur*b.m_numerateur)
-         return true;
-     else
-         return false;
+     return (m_numerateur*b.m_denominateur < m_denominateur*b.m_numerateur);
+
  }
 
 
@@ -59,6 +57,24 @@ ZFraction operator+(ZFraction const& a, ZFraction const& b)
    return a.plusPetit(b);
  }
 
+ bool operator>(ZFraction const& a,ZFraction const& b)
+ {
+    return (b.plusPetit(a));
+ }
+
+ bool operator<=(ZFraction const& a,ZFraction const& b)
+ {
+    if (a.plusPetit(b) || a==b)
+        return true;
+    else
+        return false;
+ }
+
+
+ bool operator>=(ZFraction const& a,ZFraction const& b)
+ {
+    return !(a.plusPetit(b));
+ }
 
 bool operator==(ZFraction const& a,ZFraction const& b)
 {
