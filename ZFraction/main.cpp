@@ -8,11 +8,11 @@ int main()
     //ZFraction b(2);        //Déclare une fraction valant 2/1 (ce qui vaut 2)
     ZFraction b(2,3);
     ZFraction c,d;         //Déclare deux fractions valant 0
-    c = a+b;               //Calcule 4/5 + 2/1 = 14/5
+    //c = a+b;               //Calcule 4/5 + 2/1 = 14/5
 
-    a.afficher();
-    b.afficher();
-    c.afficher();
+
+    cout<<a<<endl;
+    //a.afficher();
 
     return 0;
 }

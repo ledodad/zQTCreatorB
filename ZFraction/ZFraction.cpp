@@ -1,13 +1,9 @@
 #include<iostream>
 #include <ZFraction.h>
+using namespace std;
 
 
-ZFraction::ZFraction():m_numerateur(0),m_denominateur(0)
-{
-
-}
-
-ZFraction::ZFraction(int numerateur, int denominateur):m_numerateur(numerateur),m_denominateur(denominateur)
+ZFraction::ZFraction():m_numerateur(0),m_denominateur(1)
 {
 
 }
@@ -17,22 +13,55 @@ ZFraction::ZFraction(int numerateur):m_numerateur(numerateur),m_denominateur(1)
 
 }
 
-int ZFraction::suma(ZFraction const& fracSum) const
+ZFraction::ZFraction(int numerateur, int denominateur):m_numerateur(numerateur),m_denominateur(denominateur)
 {
-    return (fracSum.m_numerateur*fracSum.m_denominateur);
-}
 
-bool operator+(ZFraction const& a, ZFraction const& b)
-{
-    return a.suma(b);
 }
 
 
 
-void ZFraction::afficher() const
+//ZFraction& operator+=(ZFraction const& frac1)
+//{
+//      m_numerateur=frac1.m_numerateur*frac2.m_denominateur;
+//      m_denominateur=frac1.m_denominateur*frac2.m_denominateur;
+//      return *this;
+//}
+
+
+//ZFraction ZFraction::suma(ZFraction const& fracSum2)
+////int ZFraction::suma(int const& fracSum2) const
+//{
+
+//  m_numerateur=fracSum2.m_numerateur*fracSum2.m_denominateur;
+//  m_denominateur=fracSum2.m_denominateur*fracSum2.m_denominateur;
+//   return *this;
+//}
+
+//bool operator+(ZFraction const& a, ZFraction const& b)
+//{
+//    return a.suma(b);
+//}
+
+
+ostream& operator<<(ostream &flux, ZFraction const& fraction )
 {
-    std::cout<<m_numerateur<<"/"<<m_denominateur<<std::endl;
+    fraction.afficher(flux) ;
+    return flux;
 }
+
+void ZFraction::afficher(ostream& flux) const
+{
+    if(m_denominateur == 1)
+    {
+        flux << m_numerateur;
+    }
+    else
+    {
+        flux << m_numerateur << '/' << m_denominateur;
+    }
+}
+
+
 
 
 //bool ZFraction::estEgal(Duree const& b) const;
