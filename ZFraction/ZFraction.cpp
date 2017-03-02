@@ -91,12 +91,17 @@ ostream& operator<<(ostream &flux, ZFraction const& fraction )
 
 void ZFraction::afficher(ostream& flux) const
 {
-    if(m_denominateur == 1)
-    {
-        flux << m_numerateur;
-    }
-    else
-    {
-        flux << m_numerateur << '/' << m_denominateur;
-    }
+    flux <<m_numerateur<<"/"<<m_denominateur;
 }
+
+//void ZFraction::afficher(ostream& flux) const
+//{
+//    if(m_denominateur == 1)
+//    {
+//        flux << m_numerateur;
+//    }
+//    else
+//    {
+//        flux << m_numerateur << '/' << m_denominateur;
+//    }
+//}
