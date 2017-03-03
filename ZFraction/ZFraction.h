@@ -13,7 +13,8 @@ public:
     friend bool operator==(ZFraction const& a,ZFraction const& b);
 //    friend bool operator<(ZFraction const& a,ZFraction const& b);
     bool plusPetit(ZFraction const& b) const;
-    void afficher(std::ostream &flux) const;
+    friend std::ostream& operator<<(std::ostream& out, const ZFraction &f1);
+    //void afficher(std::ostream &flux) const;
 
 private:
     int m_numerateur;
@@ -26,6 +27,6 @@ ZFraction operator*(ZFraction const& a, ZFraction const& b);
 bool operator<(ZFraction const& a,ZFraction const& b);
 bool operator>(ZFraction const& a,ZFraction const& b);
 
-std::ostream& operator<<( std::ostream &flux, ZFraction const& fraction);
+//std::ostream& operator<<( std::ostream &flux, ZFraction const& fraction);
 
 #endif // ZFRACTION_H

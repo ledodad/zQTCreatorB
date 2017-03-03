@@ -81,18 +81,23 @@ bool operator==(ZFraction const& a,ZFraction const& b)
    return (a.m_numerateur==b.m_numerateur && a.m_denominateur==b.m_denominateur);
 }
 
-
-
-ostream& operator<<(ostream &flux, ZFraction const& fraction )
+std::ostream& operator<<(std::ostream& out, const ZFraction &f1)
 {
-    fraction.afficher(flux) ;
-    return flux;
+    out << f1.m_numerateur << "/" << f1.m_denominateur;
+    return out;
 }
 
-void ZFraction::afficher(ostream& flux) const
-{
-    flux <<m_numerateur<<"/"<<m_denominateur;
-}
+
+//ostream& operator<<(ostream &flux, ZFraction const& fraction )
+//{
+//    fraction.afficher(flux) ;
+//    return flux;
+//}
+
+//void ZFraction::afficher(ostream& flux) const
+//{
+//    flux <<m_numerateur<<"/"<<m_denominateur;
+//}
 
 //void ZFraction::afficher(ostream& flux) const
 //{
